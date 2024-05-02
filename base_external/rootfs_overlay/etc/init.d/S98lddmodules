@@ -148,7 +148,6 @@ case $1 in
     # basic modprobe of hello driver
     cd /lib/modules/$(uname -r)/extra/
     modprobe $helloModuleName.ko $* || exit 1
-    aesdchar_load
 
     ;;
 "stop")
@@ -162,7 +161,7 @@ case $1 in
     
     # basic rmmod of hello driver
     rmmod /lib/modules/$(uname -r)/extra/$helloModuleName.ko || exit 1
-    aesdchar_unload
+
     ;;
 *)
     echo "Invalid option \"$1\""
